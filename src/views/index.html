@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Todo-List</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .centered {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 300px; /* Adjust based on your needs */
+      }
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered">
+      <div class="buttons">
+        <button onclick="location.href='/login'">로그인</button>
+        <button onclick="location.href='/signup'">회원가입</button>
+      </div>
+    </div>
+  </body>
+</html>

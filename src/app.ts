@@ -6,28 +6,9 @@ import bcrypt from "bcrypt";
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+import { config } from "../config/config";
 
 dotenv.config();
-
-const config: sql.config = {
-  server: process.env.MSSQL_SERVER || "",
-  database: process.env.MSSQL_DB || "",
-  authentication: {
-    type: "default",
-    options: {
-      userName: process.env.MSSQL_USER || "",
-      password: process.env.MSSQL_PASSWORD || "",
-    },
-  },
-  options: {
-    encrypt: false,
-    enableArithAbort: true,
-    cryptoCredentialsDetails: {
-      minVersion: "TLSv1",
-    },
-    trustServerCertificate: true,
-  },
-};
 
 (async function connectDB() {
   try {

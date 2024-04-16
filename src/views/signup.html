@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>회원가입</title>
     <style>
       .centered-form {
@@ -66,7 +67,7 @@
   <body>
     <div class="centered-form">
       <h1>회원가입</h1>
-      <form action="/signup" method="POST">
+      <form>
         <table>
           <tr>
             <th>*이메일</th>
@@ -103,12 +104,12 @@
             </td>
           </tr>
           <tr>
-            <td colspan="2">
-              <button type="submit" id="btnSubmit">완료</button>
-              <button type="button" id="btnBack" style="margin-top: 10px">
-                뒤로 가기
-              </button>
-            </td>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" id="btnSubmit" onclick="submitSignup()">완료</button>
+                        <button type="button" id="btnBack" style="margin-top: 10px">뒤로 가기</button>
+                    </td>
+                </tr>
           </tr>
         </table>
       </form>
@@ -118,10 +119,7 @@
 
 <script src="/js/signup.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btnBack = document.getElementById("btnBack");
-    btnBack.addEventListener("click", function () {
-      window.history.back();
-    });
+  document.getElementById("btnBack").addEventListener("click", function () {
+    window.history.back();
   });
 </script>

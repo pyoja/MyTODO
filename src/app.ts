@@ -48,6 +48,9 @@ app.get("/signup", (req, res) => {
 app.post("/signup", Signup);
 
 // 로그인
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "login.html"));
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

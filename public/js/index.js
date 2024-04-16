@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnSignup = document.querySelector("#btnSignup");
 
   btnLogin.addEventListener("click", function () {
-    alert("로그인 성공");
+    window.location.href = "/login";
   });
 
   btnSignup.addEventListener("click", function () {

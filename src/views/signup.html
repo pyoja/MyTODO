@@ -1,125 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/common.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>회원가입</title>
     <style>
-      .centered-form {
-        width: 100%;
-        max-width: 1000px; /* 최대 너비 설정 */
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 상자 그림자 추가 */
-        background: rgba(255, 255, 255, 0.8); /* 배경 반투명화 */
-        border-radius: 10px; /* 모서리 둥글게 */
-      }
-      h1 {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      table {
-        width: 100%; /* 테이블의 너비를 부모 컨테이너에 맞춤 */
-        margin: 0 auto; /* 수평 중앙 정렬 */
-      }
-      th,
-      td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-      input[type="text"],
-      input[type="email"],
-      input[type="password"] {
-        width: 100%;
-        padding: 8px;
-        margin: 4px 0;
-        box-sizing: border-box;
-      }
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-      button:hover {
-        background-color: #45a049;
-      }
-      button[type="button"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #f44336;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+        .centered-form {
+            width: 100%;
+            max-width: 1000px;
+            /* 최대 너비 설정 */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* 상자 그림자 추가 */
+            background: rgba(255, 255, 255, 0.8);
+            /* 배경 반투명화 */
+            border-radius: 10px;
+            /* 모서리 둥글게 */
+        }
 
-      button[type="button"]:hover {
-        background-color: #d32f2f;
-      }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            /* 테이블의 너비를 부모 컨테이너에 맞춤 */
+            margin: 0 auto;
+            /* 수평 중앙 정렬 */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #btnSubmit {
+            background-color: #4caf50;
+            /* Green background */
+        }
+
+        #btnSubmit:hover {
+            background-color: #388E3C;
+            /* Darker shade of green */
+        }
+
+        #btnBack {
+            background-color: #d32f2f;
+            /* Red background */
+            margin-top: 10px;
+        }
+
+        #btnBack:hover {
+            background-color: #C62828;
+            /* Darker shade of red */
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="centered-form">
-      <h1>회원가입</h1>
-      <form>
-        <table>
-          <tr>
-            <th>*이메일</th>
-            <td>
-              <input type="email" id="txtEmail" placeholder="이메일" required />
-            </td>
-          </tr>
-          <tr>
-            <th>*이름</th>
-            <td>
-              <input type="text" id="txtName" placeholder="이름" required />
-            </td>
-          </tr>
-          <tr>
-            <th>*비밀번호</th>
-            <td>
-              <input
-                type="password"
-                id="txtPassword"
-                placeholder="비밀번호"
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>*비밀번호 확인</th>
-            <td>
-              <input
-                type="password"
-                id="txtConfirmPassword"
-                placeholder="비밀번호 확인"
-                required
-              />
-            </td>
-          </tr>
-          <tr>
+        <h1>회원가입</h1>
+        <form>
+            <table>
+                <tr>
+                    <th>*이메일</th>
+                    <td>
+                        <input type="email" id="txtEmail" placeholder="이메일" required />
+                    </td>
+                </tr>
+                <tr>
+                    <th>*이름</th>
+                    <td>
+                        <input type="text" id="txtName" placeholder="이름" required />
+                    </td>
+                </tr>
+                <tr>
+                    <th>*비밀번호</th>
+                    <td>
+                        <input type="password" id="txtPassword" placeholder="비밀번호" required />
+                    </td>
+                </tr>
+                <tr>
+                    <th>*비밀번호 확인</th>
+                    <td>
+                        <input type="password" id="txtConfirmPassword" placeholder="비밀번호 확인" required />
+                    </td>
+                </tr>
+                <tr>
                 <tr>
                     <td colspan="2">
                         <button type="button" id="btnSubmit" onclick="submitSignup()">완료</button>
                         <button type="button" id="btnBack" style="margin-top: 10px">뒤로 가기</button>
                     </td>
                 </tr>
-          </tr>
-        </table>
-      </form>
+                </tr>
+            </table>
+        </form>
     </div>
-  </body>
+</body>
+
 </html>
 
 <script src="/js/signup.js"></script>
 <script>
-  document.getElementById("btnBack").addEventListener("click", function () {
-    window.history.back();
-  });
+    document.getElementById("btnBack").addEventListener("click", function () {
+        window.history.back();
+    });
 </script>

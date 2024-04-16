@@ -6,7 +6,7 @@ function submitSignup() {
   const txtName = document.getElementById("txtName").value;
 
   if (!txtEmail.includes("@")) {
-    alert("이메일에 '@'가 필요합니다.");
+    alert("올바른 이메일 형식이 아닙니다.");
     return;
   }
 

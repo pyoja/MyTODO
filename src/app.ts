@@ -7,7 +7,7 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { config } from "../config/config";
-import { postSignup } from "./controllers/signup";
+import { Signup } from "./controllers/signup";
 
 dotenv.config();
 
@@ -36,17 +36,18 @@ app.use(
 );
 app.options("*", cors());
 
-// 메인 페이지 라우트
+// 메인화면
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
-// 회원가입 페이지 라우트
+// 회원가입
 app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "signup.html"));
 });
+app.post("/signup", Signup);
 
-app.post("/signup", postSignup);
+// 로그인
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

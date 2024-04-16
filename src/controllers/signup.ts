@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import sql from "mssql";
 import { config } from "../../config/config";
 
-export const postSignup = async (req: Request, res: Response) => {
+export const Signup = async (req: Request, res: Response) => {
   const { email, password, name } = req.body;
   const transaction = new sql.Transaction(await sql.connect(config));
 

@@ -22,9 +22,10 @@ export const Login = async (req: Request, res: Response) => {
       res.json({ success: true, message: "로그인 성공!" });
     } else {
       await transaction.rollback();
-      res
-        .status(401)
-        .json({ success: false, message: "이메일 또는 비밀번호가 틀립니다." });
+      res.status(401).json({
+        success: false,
+        message: "이메일 또는 비밀번호가 틀렸습니다.",
+      });
     }
   } catch (err) {
     await transaction.rollback();

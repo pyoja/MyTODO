@@ -19,13 +19,17 @@ function SubmitLogin() {
     success: function (result) {
       if (result.success) {
         alert("로그인 성공!");
-        window.location.href = "/index"; // 성공 시 홈 페이지로 리다이렉트
+        window.location.href = "/"; // 로그인 성공 시 홈페이지로 리다이렉트
       } else {
-        alert(result.message);
+        alert(result.message); // 서버에서 전달한 에러 메시지 출력
       }
     },
-    error: function (xhr, status, error) {
-      alert("Ajax Error: " + error);
+    error: function (xhr) {
+      if (xhr.status === 401) {
+        alert(xhr.responseJSON.message); // 401 에러 메시지 처리
+      } else {
+        alert("Ajax Error: " + xhr.statusText); // 기타 AJAX 에러 처리
+      }
     },
   });
 }

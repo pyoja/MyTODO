@@ -2,8 +2,17 @@ function SubmitLogin() {
   const txtEmail = document.getElementById("txtEmail").value;
   const txtPassword = document.getElementById("txtPassword").value;
 
+  if (!txtEmail) {
+    alert("이메일 주소를 입력해주세요.");
+    return;
+  }
   if (!txtEmail.includes("@")) {
     alert("유효한 이메일 주소를 입력해주세요.");
+    return;
+  }
+
+  if (!txtPassword) {
+    alert("비밀번호를 입력해주세요.");
     return;
   }
 
@@ -19,16 +28,16 @@ function SubmitLogin() {
     success: function (result) {
       if (result.success) {
         alert("로그인 성공!");
-        window.location.href = "/"; // 로그인 성공 시 홈페이지로 리다이렉트
+        window.location.href = "/";
       } else {
-        alert(result.message); // 서버에서 전달한 에러 메시지 출력
+        alert(result.message);
       }
     },
     error: function (xhr) {
       if (xhr.status === 401) {
-        alert(xhr.responseJSON.message); // 401 에러 메시지 처리
+        alert(xhr.responseJSON.message);
       } else {
-        alert("Ajax Error: " + xhr.statusText); // 기타 AJAX 에러 처리
+        alert("Ajax Error: " + xhr.statusText);
       }
     },
   });

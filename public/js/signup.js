@@ -19,6 +19,7 @@ function submitSignup() {
     url: "/signup",
     type: "POST",
     dataType: "json",
+    contentType: "application/json",
     data: {
       email: txtEmail,
       password: txtPassword,

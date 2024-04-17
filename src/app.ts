@@ -7,7 +7,8 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { config } from "../config/config";
-import { Signup } from "./controllers/signup";
+import { Signup } from "./controllers/Signup";
+import { Login } from "./controllers/Login";
 
 dotenv.config();
 
@@ -51,6 +52,7 @@ app.post("/signup", Signup);
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "login.html"));
 });
+app.post("/login", Login);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

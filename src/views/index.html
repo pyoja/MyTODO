@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/common.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>My Todo-List</title>
-    <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-      }
-      .centered {
-        text-align: center;
-        width: 100%;
-      }
-      h1 {
-        font-size: 48px;
-        color: #4caf50;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-        margin-bottom: 20px;
-      }
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-        width: 300px;
-        margin: auto;
-      }
-      button {
-        padding: 15px 30px;
-        cursor: pointer;
-        background-color: #4caf50;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 18px;
-        margin: 6px 3px;
-        transition-duration: 0.4s;
-        border-radius: 12px;
-      }
-      button:hover {
-        background-color: #45a049;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="centered">
-      <h1>My Todo List</h1>
-      <div class="buttons">
-        <button id="btnLogin">로그인</button>
-        <button id="btnSignup">회원가입</button>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>My Todo-List</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .centered {
+      text-align: center;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #4caf50;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      margin: auto;
+    }
+
+    button {
+      padding: 15px 30px;
+      cursor: pointer;
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 6px 3px;
+      transition-duration: 0.4s;
+      border-radius: 12px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="centered">
+    <h1>My Todo List</h1>
+    <div class="buttons">
+      <button id="btnLogin">로그인</button>
+      <button id="btnSignup">회원가입</button>
     </div>
-    <script src="/js/index.js"></script>
-  </body>
+  </div>
+</body>
+
 </html>
+<script src="/js/index.js"></script>

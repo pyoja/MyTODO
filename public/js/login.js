@@ -28,7 +28,7 @@ function SubmitLogin() {
     success: function (result) {
       if (result.success) {
         alert("로그인 성공!");
-        window.location.href = "/";
+        window.location.href = "/home";
       } else {
         alert(result.message);
       }

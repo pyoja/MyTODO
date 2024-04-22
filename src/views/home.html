@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>할 일 목록</h1>
+        <input type="text" id="todoInput" placeholder="할 일을 입력하세요" onkeypress="handleKeyPress(event)">
+        <ul id="todoList"></ul>
+    </div>
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter" && event.target.value) {
+                addTodo(event.target.value);
+                event.target.value = ""; // 입력 필드 초기화
+            }
+        }
+
+        function addTodo(task) {
+            const todoList = document.getElementById("todoList");
+            const newTodo = document.createElement("li");
+            newTodo.textContent = task;
+            todoList.appendChild(newTodo);
+        }
+    </script>
+    <!-- <script src="/js/home.js"></script> -->
+</body>
+
+</html>

@@ -54,6 +54,12 @@ app.get("/login", (req, res) => {
 });
 app.post("/login", Login);
 
+// 로그인
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "home.html"));
+});
+// app.post("/home", home)
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
